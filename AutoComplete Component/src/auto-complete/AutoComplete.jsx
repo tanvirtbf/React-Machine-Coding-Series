@@ -1,7 +1,11 @@
+import InputText from "./input-text/InputText"
+
 function AutoComplete({ suggestions=[] }={}){
 
     return (
-        <div className="autocomplete"></div>
+        <div className="autocomplete">
+            <InputText />
+        </div>
     )
 }
 
