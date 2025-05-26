@@ -1,9 +1,9 @@
 import './style.css'
 
-function Button({ label="", onClick=()=>{} }={}){
+function Button({ label="", onClick=()=>{}, ...rest }={}){
 
     return (
-        <button onClick={onClick}>{label}</button>
+        <button onClick={onClick} {...rest}>{label}</button>
     )
 }
 

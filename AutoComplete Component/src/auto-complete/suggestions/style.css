@@ -16,3 +16,8 @@
 .suggestions button:hover {
     background-color: lightgreen;
 }
+
+.suggestions button[data-selected="true"]{
+    background-color: red;
+    border-radius: 4px;
+}

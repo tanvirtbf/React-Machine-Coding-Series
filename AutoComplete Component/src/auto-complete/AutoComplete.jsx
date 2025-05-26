@@ -7,13 +7,20 @@ import { useState } from "react";
 
 function AutoComplete({ suggestions = [] } = {}) {
     const [query, setQuery] = useState('')
+    const [showList, setShowList] = useState(false)
 
     function handleQueryChange(value){
         setQuery(value)
+        setShowList(true)
     }
 
     function handleClear(){
         setQuery('')
+    }
+
+    function handleSuggestionSelect(selectedSuggestion){
+        setQuery(selectedSuggestion)
+        setShowList(false)
     }
 
     const filteredQuery = suggestions.filter(suggestion => {
@@ -26,7 +33,7 @@ function AutoComplete({ suggestions = [] } = {}) {
         <InputText value={query} onChange={handleQueryChange} />
         <Button onClick={handleClear} label="Clear" />
       </div>
-      {!!query.length && <Suggestions suggestions={filteredQuery} />}
+      {!!query.length && showList && <Suggestions onSelect={handleSuggestionSelect} suggestions={filteredQuery} selectedSuggestion={query} />}
     </div>
   );
 }
