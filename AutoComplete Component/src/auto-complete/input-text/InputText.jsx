@@ -3,7 +3,7 @@ import './style.css'
 function InputText(){
 
     return (
-        <input type="text" />
+        <input type="text" className='input-text' />
     )
 }
 

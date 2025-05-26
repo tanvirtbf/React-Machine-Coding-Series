@@ -1,16 +1,19 @@
-import Button from "./button/Button"
-import InputText from "./input-text/InputText"
-import Suggestions from "./suggestions/Suggestions"
+import Button from "./button/Button";
+import InputText from "./input-text/InputText";
+import Suggestions from "./suggestions/Suggestions";
 
-function AutoComplete({ suggestions=[] }={}){
+import './style.css'
 
-    return (
-        <div className="autocomplete">
-            <InputText />
-            <Button label="Clear" />
-            <Suggestions suggestions={suggestions} />
-        </div>
-    )
+function AutoComplete({ suggestions = [] } = {}) {
+  return (
+    <div className="autocomplete">
+      <div>
+        <InputText />
+        <Button label="Clear" />
+      </div>
+      <Suggestions suggestions={suggestions} />
+    </div>
+  );
 }
 
-export default AutoComplete
+export default AutoComplete;
