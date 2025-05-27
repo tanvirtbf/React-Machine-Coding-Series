@@ -1,9 +1,7 @@
 import { useCallback, useState } from "react";
-
 import Button from "./button/Button";
 import InputText from "./input-text/InputText";
 import Suggestions from "./suggestions/Suggestions";
-
 import "./style.css";
 
 function debounce(callback, delay){
